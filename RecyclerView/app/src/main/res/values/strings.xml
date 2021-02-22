@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RecyclerView</string>
+    <string name="load_more_failure_tips">数据加载失败，点击重试</string>
+    <string name="load_more_no_more_tips">没有更多</string>
 </resources>
