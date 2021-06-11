@@ -7,13 +7,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import com.lepu.recure.util.RvGridDivider;
 import com.study.recyclerview.databinding.ActivityMainBinding;
 import com.study.recyclerview.databinding.LayoutRvItemTestBinding;
 import com.study.recyclerview.recyclerview.BaseRvAdapter;
 import com.study.recyclerview.recyclerview.RvDataCtrl;
-import com.study.recyclerview.recyclerview.RvDivider;
 import com.study.recyclerview.recyclerview.RvHolder;
-import com.study.recyclerview.recyclerview.RvItemDivider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         mViewBinder.rv.setAdapter(adapter);
-        new RvDivider(mViewBinder.rv, 30, 60);
+        mViewBinder.rv.addItemDecoration(new RvGridDivider(mViewBinder.rv, 30, 60));
         RvDataCtrl<String> ctrl = adapter.getDataCtrl();
         ctrl.addAll(getInitData());
         GridLayoutManager gm = (GridLayoutManager) mViewBinder.rv.getLayoutManager();
